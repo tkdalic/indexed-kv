@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 export class IndexedKv {
   private DB_NAME = "unikki_db";
   private TABLE_NAME = "kvs";
@@ -10,14 +11,14 @@ export class IndexedKv {
     return new Promise((resolve, reject) => {
       const dbOpenRequest = indexedDB.open(this.DB_NAME, 1);
       dbOpenRequest.onerror = reject;
-      dbOpenRequest.onupgradeneeded = ev => {
+      dbOpenRequest.onupgradeneeded = () => {
         const db = dbOpenRequest.result;
         const store = db.createObjectStore(this.TABLE_NAME, {
           keyPath: "key"
         });
         store.createIndex(this.TABLE_NAME, ["key", "value"]);
       };
-      dbOpenRequest.onsuccess = ev => resolve(dbOpenRequest.result);
+      dbOpenRequest.onsuccess = () => resolve(dbOpenRequest.result);
     });
   }
 
@@ -29,7 +30,7 @@ export class IndexedKv {
   private closeDB() {}
 
   set(key: string, value: string): Promise<void> {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async resolve => {
       const db = await this.getDB();
       const store = this.getStore(db, "readwrite");
       const request = store.put({ key, value });
@@ -41,7 +42,7 @@ export class IndexedKv {
   }
 
   get(key: string): Promise<string> {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async resolve => {
       const db = await this.getDB();
       const store = this.getStore(db, "readonly");
       const data = store.get(key);
