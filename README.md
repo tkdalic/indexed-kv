@@ -2,6 +2,8 @@
 
 Using an indexedDB as a KV
 
+npm: https://www.npmjs.com/package/indexed-kv
+
 ## 概要
 
 indexed KV は、indexedDB を Key Value Store のように扱うライブラリです。
