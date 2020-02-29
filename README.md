@@ -26,3 +26,20 @@ IndexedDB から、key に対応する value を取得する。
 以下の URL でサンプルが確認できます
 
 https://tkdalic.github.io/indexed-kv
+
+### 最小構成
+
+```typescript
+import { IndexedKv } from "indexed-kv";
+const inputKey = "test";
+const inputValue = "testValue";
+
+const indexedKV = new IndexedKv(); // オブジェクトの作成
+indexedKV
+  .set(inputKey, inputValue) // keyとvalueのセットを登録
+  .then(() =>
+    indexedKV.get(inputValue).then(
+      value => console.log(value) // "testValue"
+    )
+  );
+```
