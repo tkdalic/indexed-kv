@@ -1,5 +1,5 @@
 <script>
-  import { IndexedKv } from "../../dist/index";
+  import { IndexedKv } from "indexed-kv";
   const indexedKV = new IndexedKv();
   let inputKey;
   let inputValue;
@@ -60,12 +60,11 @@
   </div>
 
   <p class="description">
-    indexed KV のサンプルです。
-    indexed KV は、indexedDBを Key Value Store
+    indexed KV のサンプルです。 indexed KV は、indexedDBを Key Value Store
     のように扱うライブラリです。
     <br />
-    keyを変更するごとに、indexedDBから該当するキーを探し、
-    あればindexed-db valueを返却します。
+    keyを変更するごとに、indexedDBから該当するキーを探し、 あればindexed-db
+    valueを返却します。
     <br />
     キーがなければnullとなります。
     <br />
