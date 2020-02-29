@@ -1,6 +1,6 @@
 {
   "name": "indexed-kv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Using an indexedDB as a KV",
   "main": "dist/index.js",
   "repository": "git@github.com:tkdalic/indexed-kv.git",
