@@ -70,5 +70,10 @@
     <br />
     <br />
     また、反映を押すことで、該当のkeyのvalueを更新します。
+    <br />
+    <br />
+    <a target="_brank" href="https://github.com/tkdalic/indexed-kv">github URL</a>
+    <a target="_brank" href="https://www.npmjs.com/package/indexed-kv">npm URL</a>
+    
   </p>
 </main>
