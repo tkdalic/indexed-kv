@@ -8,10 +8,15 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node dist/index.js",
+    "build": "tsc",
     "lint": "eslint src/**/*",
     "lint:fix": "eslint --fix src/**/*",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn build"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/jest": "^25.1.3",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
@@ -20,6 +25,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-jest": "^23.8.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "fake-indexeddb": "^3.0.0",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.1",
